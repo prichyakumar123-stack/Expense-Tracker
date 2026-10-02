@@ -1,0 +1,410 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #333;
+}
+
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+
+/* Main Container */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+
+/* Summary Cards */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    font-size: 28px;
+}
+
+
+/* Income Card */
+.income-card {
+    border-top: 5px solid #16a34a;
+}
+
+.income-card h2 {
+    color: #16a34a;
+}
+
+
+/* Expense Card */
+.expense-card {
+    border-top: 5px solid #dc2626;
+}
+
+.expense-card h2 {
+    color: #dc2626;
+}
+
+
+/* Balance Card */
+.balance-card {
+    border-top: 5px solid #2563eb;
+}
+
+.balance-card h2 {
+    color: #2563eb;
+}
+
+
+/* Transaction Form */
+.transaction-form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.transaction-form h2 {
+    margin-bottom: 20px;
+    color: #1e40af;
+}
+
+
+/* Form */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+}
+
+
+/* Button */
+button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+
+/* History */
+.history {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.history-header h2 {
+    color: #1e40af;
+}
+
+.history-header select {
+    width: 200px;
+}
+
+
+/* Transaction List */
+#transaction-list {
+    margin-top: 10px;
+}
+
+.empty-message {
+    text-align: center;
+    color: #777;
+    padding: 25px;
+}
+
+
+/* Transaction Item */
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-info h4 {
+    margin-bottom: 5px;
+}
+
+.transaction-info p {
+    font-size: 13px;
+    color: #777;
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .history-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .history-header select {
+        width: 100%;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+}
+/* Transaction Actions */
+
+.transaction-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+    width: auto;
+    padding: 8px 12px;
+    font-size: 13px;
+    grid-column: auto;
+}
+
+.edit-btn {
+    background: #f59e0b;
+}
+
+.edit-btn:hover {
+    background: #d97706;
+}
+
+.delete-btn {
+    background: #dc2626;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+/* =========================
+   PROFESSIONAL IMPROVEMENTS
+   ========================= */
+
+/* Card Hover Effect */
+.card {
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Form Hover */
+.transaction-form {
+    transition: 0.3s;
+}
+
+.transaction-form:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* History Hover */
+.history {
+    transition: 0.3s;
+}
+
+.history:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* Transaction Row */
+.transaction-item {
+    transition: 0.2s;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.transaction-item:hover {
+    background: #f8fafc;
+}
+
+
+/* Transaction Amount */
+.transaction-amount {
+    min-width: 100px;
+    text-align: right;
+}
+
+
+/* Action Buttons */
+.transaction-actions button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* Header improvement */
+header {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Main Button Animation */
+form > button {
+    transition: 0.3s;
+}
+
+form > button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Mobile Design */
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    header {
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .transaction-form,
+    .history {
+        padding: 18px;
+    }
+
+    .transaction-item {
+        align-items: stretch;
+    }
+
+    .transaction-amount {
+        text-align: left;
+    }
+
+    .transaction-actions {
+        width: 100%;
+    }
+
+    .transaction-actions button {
+        flex: 1;
+    }
+
+}
